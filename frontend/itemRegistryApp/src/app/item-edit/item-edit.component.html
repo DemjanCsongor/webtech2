@@ -1,0 +1,35 @@
+<mat-card *ngIf="item">
+  <mat-card-title>Edit Item</mat-card-title>
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit()" #itemEditForm="ngForm">
+      <mat-form-field>
+        <mat-label>Item Name</mat-label>
+        <input
+          matInput
+          type="text"
+          [(ngModel)]="item.name"
+          name="name"
+          required
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Item Description</mat-label>
+        <textarea
+          matInput
+          [(ngModel)]="item.description"
+          name="description"
+          required
+        ></textarea>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!itemEditForm.form.valid"
+      >
+        Save Changes
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

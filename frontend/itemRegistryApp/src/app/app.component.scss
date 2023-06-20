@@ -1,0 +1,22 @@
+mat-toolbar {
+  padding: 0 20px;
+
+  span {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  button {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #673ab7;
+
+    &:hover {
+      color: lighten(rgb(255, 255, 255), 20%);
+    }
+  }
+}

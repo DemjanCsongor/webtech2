@@ -1,0 +1,87 @@
+<mat-card>
+  <mat-card-title>Register</mat-card-title>
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+      <mat-form-field>
+        <mat-label>Full Name</mat-label>
+        <input
+          matInput
+          type="text"
+          [(ngModel)]="fullName"
+          name="fullName"
+          required
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Birth Date</mat-label>
+        <input
+          matInput
+          type="date"
+          [(ngModel)]="birthDate"
+          name="birthDate"
+          required
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Location</mat-label>
+        <input
+          matInput
+          type="text"
+          [(ngModel)]="location"
+          name="location"
+          required
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input
+          matInput
+          type="text"
+          [(ngModel)]="username"
+          name="username"
+          required
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          type="password"
+          [(ngModel)]="password"
+          name="password"
+          required
+          #passwordCheck="ngModel"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Confirm Password</mat-label>
+        <input
+          matInput
+          type="password"
+          [(ngModel)]="confirmPassword"
+          name="confirmPassword"
+          required
+          [pattern]="passwordCheck.value"
+        />
+        <mat-error
+          *ngIf="registerForm.form.hasError('pattern', 'confirmPassword')"
+          >Passwords do not match.</mat-error
+        >
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!registerForm.form.valid"
+      >
+        Register
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

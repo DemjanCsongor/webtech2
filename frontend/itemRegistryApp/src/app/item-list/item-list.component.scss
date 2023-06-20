@@ -1,0 +1,29 @@
+.mat-elevation-z8 {
+    padding: 10px;
+    background-color: white;
+}
+
+table {
+    width: 100%;
+
+    th {
+        color: #3f51b5;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    td {
+        color: #757575;
+        padding: 8px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #3f51b5;
+
+        &:hover {
+            color: #303f9f;
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+mat-card {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+
+  mat-card-header {
+    padding-bottom: 20px;
+    mat-card-title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+
+  mat-card-content {
+    form {
+      display: flex;
+      flex-direction: column;
+
+      mat-form-field {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      button {
+        align-self: flex-start;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 5px;
+        background-color: #3f51b5;
+        color: white;
+
+        &:hover {
+          background-color: darken(#3f51b5, 10%);
+        }
+
+        &[disabled] {
+          background-color: lighten(#3f51b5, 30%);
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}

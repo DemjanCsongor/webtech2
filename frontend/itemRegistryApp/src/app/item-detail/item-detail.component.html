@@ -1,0 +1,13 @@
+<mat-card *ngIf="item">
+  <mat-card-header>
+    <mat-card-title>Item Detail</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Name: {{ item.name }}</p>
+    <p>Description: {{ item.description }}</p>
+    <button mat-button color="warn" (click)="onDelete()">Delete</button>
+    <button mat-button color="primary" [routerLink]="['/items/edit', item._id]">
+      Edit
+    </button>
+  </mat-card-content>
+</mat-card>
